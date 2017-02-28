@@ -5,84 +5,38 @@ type: lesson
 date: "2015-05-01T22:12:03.284Z"
 layout: post
 path: "/data-types/"
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+description: Data types are the most atomic unit of any program. Javascript has many basic data types, which we cover in this lesson, and a couple of complex data types. We'll be introduced to Arrays at the end of the class as our first complex data type.
 learningObjectives: Describe the concept of a "data type" and how it relates to variables; Declare, assign to, and manipulate data stored in a variable; Create arrays and access values in them
 ---
 
 # Data Types
-
-- Welcome to Class
-- Go over the Learning Objectives
-- draw Git chart on board for review
-
-## Review: Git & Terminal
-- What is Git?
-- How does Git work?
-- Why do we use Git?
-- Fill in the chart:
-  - making changes
-  - staging
-  - committing
-  - pushing
-    - fetch
-    - merge
-  - pulling
-  - remote vs local
-
-## Where are we?
-- spent the last two classes downloading and learning a set of tools:
-  - Git
-  - Terminal
-  - Node & NPM
-- Next 4 classes are when we're going to learn how to write programs
-- Start at the beginning/most atomic unit of any program, which is the data passing through that program
-- every class is going to build of the ones before it and by the end we'll know just about everything about the language we need in order to write and build programs
-- to draw an analogy, in your Language Arts or English classes in High School and maybe College, you learned about subjects, verbs, punctuation, sentence structure, paragraph structure, etc - since JavaScript is a *language* it's helpful to think about what we're learning over the next few weeks as synonymous in a lot of ways
-  - instead of sentences and paragraphs, we have expressions and statements
-  - instead of subjects and verbs, we have values and operators
+		We spent the last two classes downloading and learning a set of tools that we need in order to be successful in this class. We spent almost an entire class on Git so that we can manage and submit our homework and work on our upcoming projects. Even today you'll see how tightly Git is integrated into what we're doing.
+		Now that we've been introduced to these tools - Git and the command line - we're ready to go; we're ready to learn how to write programs using javascript. And we're going to start with the most atomic unit of any program - the data passing through it. In each of the next four classes, we'll become acquainted with one of the atomic units of programming with javascript - data types, control flow, functions and objects - and each class will build on the ones before it. By the end of this section of the course we'll have been introduced to every aspect of the language that we need in order to start building applications and writing programs.
+		To draw an analogy, in your Language Arts or English classes in High School and maybe College, you learned about subjects, verbs, punctuation, sentence structure, paragraph structure. Since javascript is a language, it's helpful to think about what we're learning over the next few weeks as synonymous in a lot of ways: instead of sentences and paragraphs, we have expressions and statements; instead of subjects and verbs we have values and operators. 
 
 ## Introduction to Data Types
-- At the most generalized level of discussing programming, all we're doing is moving and manipulating data.
+		At the most generalized level, when we're discussing programming, all we're doing is moving and manipulating data.
 
 ### What is a "Data Type"
-- Data types are simply the kinds of data that we can work with within our program
-- more nuanced than saying we can use numbers, strings, booleans, etc
-- data types determine what the possible values can be in any given part of our program
-- data types also determine what actions we can perform on our data
-  --> Values and Operators
-
-Two ways of classifying data types: Simple or Basic Data Types and Complex Data Types
-- Today, we're talking about **Simple Data Types:**
-1. Numbers
-2. Strings
-3. Booleans
-
-- We'll get in to our first Complex data type: Arrays
-
-- For each data type we cover, we'll answer these two questions:
-  - What values constitute this data type?
-  - What operations can I perform on this data type?
+		Data *types* are simply the kinds of data that we can work with within our programs. That's a nuanced way of saying that we can use numbers, strings, booleans, etc. We have two ways of classifying these data types: simple and complex. Today we'll be talking about all 3 simple data types and 1 complex data type. The simple data types that we're about to go in to are: 
+		
+		1. Numbers
+		2. Strings
+		3. Booleans
+			
+		We'll get in to our first Complex data type: Arrays
+		
+		For each data type we cover, we'll answer these two questions: What values constitute this data type? What operations can I perform on or with data of this type?
 
 ## Numbers
-- What values constitute Numbers?
-- What operations can we perform on Numbers?
+		For our first data type, these questions are maybe a little contrived: what values do we think constitute the number data type? Well, numbers do. And what can we do with numbers? Math. 
 
 ### Numeric Values
-- Numbers are *numeric values* stored in computer memory
-- It's important to note that there is a limit to the size of numbers you can work with - but you wont need to worry about it, because it's really big
-- JavaScript Numbers can be `integers` or `floats`
-  integers: whole numbers like `1`, `10` or `-100`
-  floats: fractional numbers like `1.2`, `3.14`, `0.25`
-
-- That's kind of it as far as what we need to worry about when it comes to numeric data
-- There are a lot of use cases for numeric data in JavaScript
-  - numeric data: number of people on the bus
-  - numbers as information: the score in a game we're building
-  - numbers as attributes: the x and y coordinates of an element on the screen that we want to animate
+		Numbers are *numeric values* stored in computer memory. There is a limit to how large your numbers can be - but it's really big, so you shouldn't worry about it. If you're coming from another programming language you may be curious as to whether or not javascript makes a distinction between integers and floats. The answer is: javascript does not. An integer is a whole number, like `1` or `10` or `-100`. A float is a fractional number, like `1.2`, `3.14`, or `0.25`. When it comes to numbers in javascript - that pretty much sums up everything.
+		There are a lot of use cases for numeric data when building applications - as you might expect. The number of people currently on the bus, the current score in a game, the x and y coordinates of an element on the page as we animate from one position to another. And as you might guess, the value for us as application developers is in what we can do with numbers. 
 
 ### Operators
-1. Arithmetic Operators
-2. Number Operators (`Math` object)
+		Actions that we can perform on data come in two forms - functions or operators. For numbers, we have one of each: Arithmetic operators and the `Math` object. 
 
 #### Arithmatic operators
 
@@ -146,6 +100,9 @@ console.log( Math.random() ) // => 0.229375290430
 ```
 
 *How might I get a random number between 0 and 10*
+```
+Math.floor( Math.random() * ( max - min + 1 ) + min );
+```
 
 ## Strings
 - What values constitute Strings?

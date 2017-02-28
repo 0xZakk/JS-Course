@@ -15,7 +15,7 @@ import PostListItem from '../components/post/post-list-item'
 export default class Index extends React.Component {
 
   render () {
-    // console.log( this.props )
+    console.log( this )
 
     const lessons = []
 

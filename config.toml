@@ -1,2 +1,3 @@
-siteTitle="Gatsby Starter Site"
+siteTitle="Introduction to JavaScript"
+siteSubtitle="Welcome to your new clean Gatsby site"
 linkPrefix = "/gatsby-starter-default"

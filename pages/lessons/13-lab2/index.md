@@ -4,7 +4,7 @@ title: Lab 2
 type: lesson
 date: "2015-05-01T22:12:03.284Z"
 layout: post
-path: "/lab-1/"
+path: "/lab-2/"
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ---

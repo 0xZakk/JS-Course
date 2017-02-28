@@ -5,136 +5,98 @@ type: lesson
 date: "2015-05-01T22:12:03.284Z"
 layout: post
 path: "/command-line/"
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-learningObjectives: Learn how to work in the Terminal; Learn the basics of Git and GitHub; Learn how to run JavaScript from/in the Terminal
+description: In this lesson, we'll cover the basics of navigating the file system on your computer with a tool called the command line. We'll also dive into working with a command line tool called Git and a companion tool called GitHub.
+learningObjectives: Learn how to work in the Terminal; Learn the basics of Git and GitHub;
 
 ---
 
-# The Command Line
+# The Command Line & Git
+Welcome to lesson 01 of An Introduction to Javascript! Today's lesson is going to cover two things: First, we're going to learn how to navigate the file systems on our computers using the command line; Second, we're going to learn a tool called Git, a version control system (VCS) that makes working with a code base a lot easier. 
 
-- Welcome to Class
-- Go over the Learning Objectives
+We're unfortunately not going to start with any javascript yet and this is intentional. Last time I taught this course I tried to get through learning both the command line and git as quickly as possible so that we could get to learning the good stuff: javascript. I would say that was one of the weaknesses of the last time I taught this course. So we're correcting ship, we're dedicating an entire lesson to these technologies so we don't have to revisit them later.
+
+Lets get started!
 
 ## The Terminal
+We're going to start by learning a tool called the command line or the terminal.
 
 ### Introduction
-- What is the terminal?
-  - Terminal = Command Line = Console
-  - Terminal is a tool for us to navigate the file system on our computer
-- Why might we use it?
-  - (1) power (2) efficiency
-  - makes it easier for us to work with our computers: get around the file system, create, edit, move files around, copy files
-  - time is money - as developers, keystrokes are time - so the faster we can get around and work in our environment, the more productive we can be
-- learning the terminal is sort of a barrier for entry - have to get up the learning curve before we can be really effective at our jobs
-- investing time in learning your code editor reaps similar rewards
 
-For Macs:
-- Open the "Terminal" app (Applications > Utilities > Terminal)
+The terminal is a really powerful tool for navigating the file system on your computer. It predates the Graphical User Interface (GUI) that you're probably used to - think Finder if you're on a Mac or Explorer if you're on a PC. The Terminal is what we call a Character User Interface (CUI) because we interact with it by typing text.
 
-For Windows:
-- Open the "Git BASH" application
+The terminal is the de facto way for programmers to work and it's where we spend the vast majority of our time - by why? What's so great about it?
 
-### Navigating our File System
-- start by figuring out where we are now:
-  - print working directory - `pwd`
-  - *absolute path*
-  - *root dir `~/`*
-- now we know where we are, lets go somewhere. Where can we go from here?
-  - list contents - `ls`
-  - list all directories in the current folder
-  - what's a directory?
-- check pace
-- lets open one of these folders
-  - change directories - `cd`
-  - change to (a) a specific folder, (b) go up a folder, (c) go up more than one folder, (d) go to the home folder
-- navigating folders is super useful, but you guys probably don't have that many yet - so lets make some
-  - make directory - `mkdir`
+The terminal's advantages are:
+1. It's concise and powerful - you can do a lot with relatively few keystrokes,
+2. It's efficient - both as a use of time and for your machine, because it requires fewer resources,
+3. It's expert-friendly - which is to say that if you invest a little time in getting good at using the command line, the productivity benefits that you'll reap are incredible,
+4. It's easy to automate via scripting - you can write scripts that will handle repetitive tasks.
 
-### Creating a folder for our classwork
-- kick in doing something useful: lets make a set of folders for us to organize our notes and homework assignments from class
-  - how do we make a new folder? `mkdir js_dc_3`
-  - how do we change into that folder? `cd js_dc_3`
-  - How do we create a file? `touch class_notes.md`
-  - What if we want to make multiple folders at once?
-  - What if we want to remove a folder?
-  - What if we create a folder and we want to copy it?
-  - How to we move files from one folder to another?
+Lets dive into the terminal and see what we've got. If you're on a mac open the "Terminal" app; if you're on windows, open the "Git Bash" application you downloaded last class. 
 
-Sum Up Exercise: Write all the commands we just learnt on the board and ask follow up questions on each
+### Anatomy of the Terminal Prompt
+The terminal has a couple of parts to it that we should know about before we start using. Those are:
+1. The Prompt: This is where we will enter our commands to be evaluated and executed by the computer
+2. The Command: This is the text we'll pass to the prompt to tell it what we want to do
+3. Input: The data we want the command to act on or evaluate
+4. Flags/Options: additional data or modifying data that we can specify for a given command
+5. Output: Information the command returns given our input
 
-## Activity: Customizing your Bash Profile
-- Setup short command for your text editor
-- Edit and modify your command prompt
-- Find and implement a terminal theme (background and text color)
-- Add the branch or repository to your command prompt
+### Navigating the File System
+Now lets start to use the terminal to navigate around our computer.
+
+The first step to navigating with the command line is figuring out where we are, which we can do with the `pwd` command. `pwd` stands for Print Working Directory and it will print the absolute path to our current directory - or folder.
+
+Now that we know where we are, it would be great to know where we can go. We can find that out with the `ls` command, which stands for list. If we run this command, we'll get a list of all the files and folders in our current directory. The `ls` command has a couple of options that we can pass it, including the `-a`, to see absolutely everything, and the `-l` to see a list view. We can combine these two into one additional option with `-la`. 
+
+Next it would be great to be able to switch in to one of these directories listed by `ls`. We can do that with `cd` - change directory. `cd` takes the directory we want to change in to as it's input and the default input is the current user's root directory. So if we're deep in a file tree and just run `cd`, we'll go all the way back up to the top, to the user's root directory. If we want to go in to a folder, we pass the reference to that folder to `cd`; if we want to leave a folder, and go up a level, we pas `..`, which represents the parent directory to our current directory.
+
+### Paths: Relative & Absolute
+As a quick aside, I want to talk about paths. Paths represent the route you take to get to a particular file or folder. When you run `pwd`, the output is the absolute path to your current directory. We can recognize it as an absolute path because it starts from the root directory. Relative paths on the other hand, represent the route to a file or folder from the current directory. Relative paths typically start with `.` or `..`. 
+
+### Working with Files & Folders
+The second half of what we need to learn here is how to work with files and folders. We're going to follow the same pattern of inputting a command with some input and getting an output, this time our output will be files and folders.
+
+So the first thing we want to learn how to do is to make a directory, which we can do with the `mkdir` command. `mkdir` takes the new folder name as it's input, so `mkdir test-folder` will create a folder called `test-folder`.
+
+Deleting a folder is really easy, we just use `rmdir` and pass it the folder name, like `rmdir test-folder`. It's important to note that when you delete something through the command line, you delete it for good. It doesn't get moved to the trash, it is deleted. Forever. This means you need to be really careful about what you delete.
+
+Making a file is really easy: we use the `touch` command and pass it the file name. For instance, we can create a file called `test.js` by running: `touch test.js`. We can remove that file with `rm`, i.e. `rm test.js`.
+
+If we make a directory with `mkdir test-directory` and then `cd` into that directory with `cd test-directory`, we can create multiple files at once with `touch {fileOne,fileTwo,fileThree}.js`. This command will create a `fileOne.js`, `fileTwo.js`, and `fileThree.js`. We can delete these files individually or pass a wildcard selector to `rm`, like `rm *.js`. This will delete every file with the `.js` extension in the current directory.
+
+If we make two subdirectories in our `test-directory` called `dir01` and `dir02` and create a bunch of files in `dir01`, then  we can see how to copy and move files. To copy files, we use the `cp` command and pass it the files we want to copy and the location of where we want to copy them to: `cp dir01/test01.js dir02`. If We want to move a file, then we use the `mv` command: `mv dir01/test02.js dir02`.
+
+Now if we want to delete a folder that has files in it, we can't use `rmdir`. Instead, we need to recursively delete the folder and the files within it. If we go up a directory, using `cd ..`, we can run `rm -rf test-directory` to delete `test-directory` and everything within it. 
 
 ## Git and GitHub
-- Last class we installed something called Git and we made you all get accounts on something called GitHub before this course started
-- What are these?
+		In the last session of the course, we made you install something called Git and before the course started, we made you create an account with something called GitHub. This next section of the class will cover what these tools are, why they're useful and why it's important that we learn them now. 
+		Git is a version control system (VCS), which is a kind of tool for managing changes to a codebase and the history of those changes. It's a really sophisticated way for us all to work on the same set of files without accidentally overwriting each others work, while also being able to see what code is finished and what's still being developed.
+		GitHub is tied to Git - it's a way for teams to host Git 'repositories' - a term will talk about soon. GitHub did not create Git, it's just a Saas tool that works really well with Git.
 
-GIT: version control software
-- gives us the ability to do line by line edits to watched files
-- we initialize a repository - a folder  of files we want to watch with git
-- when we make changes to those files, git records those changes, per line
-- When can then stage those changes, commit them (like saving), then push them
-- push them to a remote repository
+### Workflow
+		Now that we know what these tools are, how do they work? I'll start by giving you the 20,000 foot view. 
+		
+		Lets say that I've started building an app. I'll need a place on my computer to keep the code I write for this app, like a folder somewhere. I want to keep track of the changes I make over time, so I'm going to use Git. This folder where my code is stored and managed by Git is called a `repository` and it's my `local` repository. 
+			Lets say that I want to enlist your help in building my app. Should I put the files on a USB drive and transfer them to you that way? That would be really inefficient: you'd make changes and then we'd have to transfer them back to my computer and then we'd have to manually synchronize our changes together. Instead, we'll use Github. In Github, we'll create a repository that I'll give you access to and you'll `clone` it to your computer. This is called the `remote` or `origin` repository. 
+			Now I can make changes and push them to `origin` and then you can pull those changes down. Similarly, you can make changes and push them and then I can pull them. The `origin` repository is a centralized and shared version of all our work, managed and synchronized through git.
+			We're approaching our deadline but still have a lot of work left to do before we can launch our app. So we decide to hire a freelancer. We don't want to give him direct access to our `origin` repository, because we want to check his work before integrating it with ours. So our freelancer `fork`s the repository. `Fork`ing a repository is like creating a clone of it. He then copies down his `fork`, creating his `local` repository. 
+			We continue to work and publish some of our changes. He needs to pull those locally, so he pulls them from what is to him, the `upstream` repository (our shared repository). He then builds out the features we ask him to, and pushes his work from his `local` repository to his `origin`, which is the forked version of our repository. He then submits a `pull request` on our repository, so we can review his work and merge it into ours (or not). 
 
-GitHub: SaaS tool for working with Git
-- hosting remote repositories
-- collaboration on a single codebase
+### Creating Our First Repository
+		With the 20,000 foot view out of the way, we're going to get started on the very first part of my previous explanation: building out the codebase locally.
+		Lets start by creating a new directory where our application will live. We want to use git, so we need to setup this folder to be tracked by git. We do that with `git init`, and that's it! Once we run that command git will be tracking changes in that directory. So lets make some changes.
+		Create a file called `README.md`. Lets open this folder in atom by typing `atom .` in the command line. Then in `README.md` lets add: `# My Awesome App`. Switching back to the command line, lets run `git status`. This command will show us the current status of our local repository. At this point we've created a file but haven't `staged` it - staging is the first step to saving our work in git and it tells git what work we would like to save the next time we do so. 
+		We can add changes in files to the stage by running `git add`, either as `git add .` or `git add -a`. Now if we run `git status` again, we see that these changed files appear in green - this means we've successfully staged them to be saved, or `commit`ed. In git, to save a change and make it part of the git history, we `commit` it. Up until changes are `commit`ed, they're considered not-final. We commit these changes with `git commit`, which we'll pass a `commit` message by running it as `git commit -m "A message about our changes"`. Now if we run `git status`, it looks like we haven't done any work - because we haven't since our last commit. If we run `git log`, we can see all the `commits` we've made over time.
+		Lets create a second file called `index.js` and add `console.log('hello world')` to the first line. Flip back to the terminal and check the status of our repository - how do we do that again? After we've checked the status of our repository, how do we save the changes we've made?
+		This covers just about everything we'll need to know for this course about managing our local repository. If you want to go further with this, you can look up branching and revising your git history - but those are by no means required for this course.
+		
+		For fun now, lets say we want others to be able to collaborate on this little 'app' we've built. Lets open up github.com and navigate to our profile. Once you're there, up in the top right corner, click on the plus sign next to your profile image and select 'New Repository' from the dropdown. Give the repository a name, like `My First Repository` and click Create. We've now successfully created our first remote repository.
+		We need to go back to our local repository and make the connection between it and our new remote repository - setting it as the remote repository for our local repository. We do that by copying the link to our remote repository and going back to the command line. Once there, run `git remote add origin https://www.github.com/username/repository`. You can test to see if this command worked by running `git remote -v`. You should see the link to the remote repository output by this command. 
+		If we think back to the overview example from before, we're at the point where I had created a local repository, worked on the app I'm building, and then pushed it to a remote repository so that you could collaborate with me on it. 
 
-### How do we use git
-- Create a `repository` - `git init`
-  - now that we have a working repository, what next?
-  - think of it like saving our changes
-- moving up:
-  - start with the files locally on our machine
-  - stage these changes - tells git we want to "save" these changes
-  - commit these changes - "saves" these changes locally
-  - push commit history to the remote repository - gives everyone else working on this project access to our work
-  - pull commits to our local repository
-- Now lets do all of this together
-  - check to see if we have changes that we can stage and commit: `git status`
-  - stage changes to be committed -  `git add .`
-  - commit changes `git commit` or `git commit -m "commit message"`
-  - create a remote repository for us to push changes to on GitHub
-  - add that repository as the `remote origin`
-  - push changes to that repository
-  - refresh the page to see if they showed up
-
-### If there is extra time
-- send the link to your repository to the person sitting next to you
-- take that repository and clone it locally
-    - make some changes, stage and commit them, then push them
-    - pull the changes to your own repository
-
-## Activity: Scavenger Hunt
-https://github.com/ga-students/js_dc_scavenger_hunt
-
-## Command Line JavaScript
-- the last things we need to cover that we installed last class are Node and NPM, what are these?
-- I explained to some of you that Node is a JavaScript runtime
-  - from the timeline, Chrome's V8 engine - super performant JavaScript Engine
-  - unpack that a little bit:
-    - an engine "runs" the language
-    - remember the language spec determines the features of the language and how it should work but someone has to go build that
-- Node is built on top of V8, but does not require a browser
-  - unique because it works outside of the browser
-  - lets us manage servers and databases and do all sorts of non-browser, back-end things with JavaScript - building APIs
-  - lets us run JavaScript from our terminal
-
-
-- running files with Node
-  - create a js file that console.logs hello world to the console
-  - take user input
-
-- using the node repl
-  - using the node repl
-
-
-- what is npm
-- running npm init
-- installing a package with npm
-  - `npm install --save-dev flip-text`
-  - requiring an npm package and using it
-  - taking user input: `var argument = process.argv[2]`
+### Forking a Repository
+		You've done some great work on your little app, now it's time to bring in some help to take it over the finish line. Pair up with the person sitting next to you to, slack them the GitHub link to the repository you just created and have them slack you theirs.
+		Up in the top right corner is a button to `Fork` the repository - that's what you're going to click. This is going to create a copy of the repository under your GitHub account. Take the link to the newly forked repository and clone it locally, making sure to navigate out of your GitHub repo first! You can clone a repository by running `git clone https://github.com/username/repository nameOfClonedRepo`. Once the repository finishes cloning, you need to `cd` into it. Once you're there, open up the repository in your favorite text editor and change `'hello world'` to `'hello from zakk'` - replacing my name with yours. Add and commit these changes.
+		To synchronize these local changes with our origin, we run `git push origin master` where `origin` is the environment and `master` is the branch we want to push to. 
+		
