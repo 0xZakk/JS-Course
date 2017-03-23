@@ -11,64 +11,36 @@ learningObjectives: Understand what functions are and how, when and why to use t
 
 # Functions
 
-## Class Structure
-- Welcome to Class
-- Review previous class
-- Go over Learning Objectives
-- Deliver Lesson
-  - Introduce concept
-  - Give exercise
-  - Repeat
-- Go over Learning Objectives
-- Closing Questions / Tying up loose ends
-- Exit Tickets
-
-
-## Review: Control Flow
-Have students break out into four groups of 3-4 students. Each group is assigned a `warmup.js` prompt and has to work together to solve it. The first team finished wins. After each team has finished, someone from each team should present both their prompt and their team's solution as well as how they approached solving it.
-
-
 ## Introduction to Functions ( 5 minutes )
-*Goal is to introduce students to the concept of functions and at a high level why they're important, before going into the syntax and use of functions*
+Looking back, we've learnt the basics of working with data in javascript: numbers, booleans, strings; and, we've learnt how to store that data in variables where we can act on it, manipulating it's value. In the last class, we learnt about control flow, which is how wewrite code that reacts to our data. If a number is greater than 5 we'll done one thing, and if it's less than 5 we'll do another. So we've got our data and we can respond to it, now we need actions that affect that data in meaningful ways, triggingering new responses and creating more actions.
 
-Looking back,
-- we've learnt the basic data types in JavaScripts (numbers, booleans, strings) and we've learnt how to store them in variables
-- so, we've learnt about data and how to store it
-- last class, we learnt about control flow, which is how we could shape and how it reacted to what our data was.
-- if a number (i.e. some data stored in a variable) is greater than 5, then do this, otherwise do that.
-- so we've learnt how to store data and we've learnt how to respond to the value of our data, but we've only sort of covered how to actually manipulate our data
-- we have talked about incrementing or multiplying our data, especially last class as part of learning control flow
-- but we've really only touched the surface
+That's one thing that functions do for us.
 
-We've got our data, we can respond to it, now we need actions that we can run based on our conditions - actions that affect our data in meaningful ways, triggering new responses and creating more actions.
+A function is code that does something.
 
-That's one thing that functions give us.
+The other thing we need, that functions conveniently give us, is a way to encapsulate our code so that we can re use it. Functions take this idea of blocks that we learned about in loops and give those blocks something called scope, which almost make them like mini, subprograms within our program. Once we've declared our function and defined what action it will perform for us, we can invoke it over and over again, on different data and it'll perform the same action as many times as we need it to.
 
-It's code that does something
+## Writing a function
+There are a few parts to declaring and invoking functions - that is, writing them, defining what code we want to reuse or action we want to perform and then saying we want to run that code. We can declare a basic function just like this: 
 
-The other thing we need, that functions conveniently give us, is we need a way to encapsulate our code so that we can reuse it
-- functions use this idea of blocks - just like loops do
-- however, in a function blocks have something called scope, which we'll see almost makes them like subprograms without our program
-- once we've declared our function and defined what actions it will perform for us, we can invoke it over and over again, on different data and it'll perform the same action as many times as we need it to
-
-
-## Writing a function ( 10 minutes )
-*The goal of this section is to introduce how to actually write functions*
-
-Lets go ahead and write our first function:
 ```
 function myFunction() {
   console.log( 'This is my first function' )
 }
 ```
 
-- syntax is starting to look familiar - compare to `if` statements and `for` loops and variable declaration
-- this is the first step in creating and using a function - this is called declaring the function or function declaration
-- the second step is called function invocation or invoking the function
+This overall syntax may be starting to look familiar. You can almost compare it to an `if` statement or a `for` loop. First we have our keyword, which in this case is `function`, then we're giving our function a name, opening a block and within it, writing the code we want to execute when our function is called.
+
+That is the first part of working with functions: declaring them. The second part is invoking them, and it looks like this:
 
 ```
 myFunction()
 ```
+
+So we've gone through the two steps of writing and using a basic function.
+
+
+
 - so now we've gone through the two steps of using functions: declaration and invocation
 
 *Exercise 01 ( 10 minutes )*
